@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/basic-admin-pannel/static/css/main.b2e4be5f.chunk.css",
+    "main.js": "/basic-admin-pannel/static/js/main.d8f5b10b.chunk.js",
+    "main.js.map": "/basic-admin-pannel/static/js/main.d8f5b10b.chunk.js.map",
+    "runtime-main.js": "/basic-admin-pannel/static/js/runtime-main.2e40b9e8.js",
+    "runtime-main.js.map": "/basic-admin-pannel/static/js/runtime-main.2e40b9e8.js.map",
+    "static/js/2.82732fc8.chunk.js": "/basic-admin-pannel/static/js/2.82732fc8.chunk.js",
+    "static/js/2.82732fc8.chunk.js.map": "/basic-admin-pannel/static/js/2.82732fc8.chunk.js.map",
+    "index.html": "/basic-admin-pannel/index.html",
+    "static/css/main.b2e4be5f.chunk.css.map": "/basic-admin-pannel/static/css/main.b2e4be5f.chunk.css.map",
+    "static/js/2.82732fc8.chunk.js.LICENSE.txt": "/basic-admin-pannel/static/js/2.82732fc8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2e40b9e8.js",
+    "static/js/2.82732fc8.chunk.js",
+    "static/css/main.b2e4be5f.chunk.css",
+    "static/js/main.d8f5b10b.chunk.js"
+  ]
+}
