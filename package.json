@@ -2,7 +2,7 @@
   "name": "basic-admin-pannel",
   "version": "0.1.0",
   "private": true,
-  "homepage":" https://shubham11mishra.github.io/basic-admin-pannel/",
+  "homepage": " https://shubham11mishra.github.io/basic-admin-pannel/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
