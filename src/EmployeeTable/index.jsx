@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import EDetail from "../EmployereeDetail";
+import data from "../uttils/mock.json";
 const EmployeeTable = () => {
   const [employees, setEmpoloyees] = useState([]);
   const [employeeslist, setEmpoloyeesList] = useState([]);
   const [isDataAvailabel, setisDataAvailabel] = useState(false);
   const [employeeDetail, setEmployeeDetail] = useState("");
   useEffect(() => {
-    axios
-      .get(
-        "http://www.filltext.com/?rows=32&id=%7Bnumber%7C1000%7D&firstName=%7BfirstName%7D&lastName=%7BlastName%7D&email=%7Bemail%7D&phone=%7Bphone%7C(xxx)xxx-xx-xx%7D&address=%7BaddressObject%7D&description=%7Blorem%7C32%7D"
-      )
-      .then((res) => {
-        setEmpoloyees(res.data);
-        setEmpoloyeesList(res.data);
-      });
+    setEmpoloyees(data);
+    setEmpoloyeesList(data);
+    // axios.get("../uttils/mock.json").then((res) => {
+    //   setEmpoloyees(res.data);
+    //   setEmpoloyeesList(res.data);
+    //   console.log(res.data);
+    // });
   }, []);
 
   const fetchEmployeeDetail = (employeeId) => {
@@ -22,7 +22,7 @@ const EmployeeTable = () => {
 
     setisDataAvailabel(true);
   };
-  console.log(employees);
+
   const searchEmployeee = (q) => {
     const updatedValues = employees.filter((name) => {
       if (
@@ -44,7 +44,16 @@ const EmployeeTable = () => {
             placeholder="Enter something"
             name="search-box"
             id="search-box"
-            onChange={(e) => searchEmployeee(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.keyCode == 13) {
+                e.preventDefault();
+                return false;
+              }
+            }}
+            onChange={(e) => {
+              e.preventDefault();
+              return searchEmployeee(e.target.value);
+            }}
           />
         </form>
 
@@ -53,11 +62,11 @@ const EmployeeTable = () => {
             <table>
               <thead>
                 <tr>
-                  <th class="column1">Id</th>
-                  <th class="column2">FirstName</th>
-                  <th class="column3">LastName</th>
-                  <th class="column4">Email</th>
-                  <th class="column5">Phone</th>
+                  <th className="column1">Id</th>
+                  <th className="column2">FirstName</th>
+                  <th className="column3">LastName</th>
+                  <th className="column4">Email</th>
+                  <th className="column5">Phone</th>
                 </tr>
               </thead>
             </table>
@@ -72,13 +81,13 @@ const EmployeeTable = () => {
                       <tr
                         onClick={() => fetchEmployeeDetail(employee.id)}
                         key={index}
-                        class="data-row"
+                        className="data-row"
                       >
-                        <td class="column1">{employee.id}</td>
-                        <td class="column2">{employee.firstName}</td>
-                        <td class="column3">{employee.lastName}</td>
-                        <td class="column4">{employee.email}</td>
-                        <td class="column5">{employee.phone}</td>
+                        <td className="column1">{employee.id}</td>
+                        <td className="column2">{employee.firstName}</td>
+                        <td className="column3">{employee.lastName}</td>
+                        <td className="column4">{employee.email}</td>
+                        <td className="column5">{employee.phone}</td>
                       </tr>
                     );
                   })}
