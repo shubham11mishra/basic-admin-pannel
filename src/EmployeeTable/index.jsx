@@ -24,13 +24,14 @@ const EmployeeTable = () => {
   };
   console.log(employees);
   const searchEmployeee = (q) => {
-    const updatedValues = employees.filter((name) =>{
-      if( name.firstName.toLowerCase().includes(q) ||  name.lastName.toLowerCase().includes(q)){
+    const updatedValues = employees.filter((name) => {
+      if (
+        name.firstName.toLowerCase().includes(q) ||
+        name.lastName.toLowerCase().includes(q)
+      ) {
         return name;
       }
-    }
-     
-    );
+    });
     setEmpoloyeesList(updatedValues);
   };
   return (
